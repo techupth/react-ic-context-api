@@ -1,4 +1,5 @@
 import "./ViewCounterPage.css";
+
 function ViewCounterPage() {
   return (
     <div className="view-counter-container">
