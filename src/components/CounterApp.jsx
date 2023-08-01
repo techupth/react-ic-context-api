@@ -1,24 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
+import { useContext } from "react";
+import { CounterContext } from "../context/CounterContext";
+
 import "./CounterApp.css";
 function CounterApp() {
-  const [counter, setCounter] = useState(0);
+  const context = useContext(CounterContext);
 
   function handleAddCounter() {
-    setCounter(counter + 1);
+    context.setCounter(context.counter + 1);
   }
 
   function handleSubtractCounter() {
-    setCounter(counter - 1);
+    context.setCounter(context.counter - 1);
   }
 
   function handleResetCounter() {
-    setCounter(0);
+    context.setCounter(0);
   }
 
   return (
     <div className="counter-app">
       <h1>Counter App</h1>
-      <h2>{counter}</h2>
+      <h2>{context.counter}</h2>
       <div>
         <button onClick={handleAddCounter}>+</button>
         <button onClick={handleSubtractCounter}>-</button>
